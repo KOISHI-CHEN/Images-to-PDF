@@ -19,6 +19,7 @@ import java.util.ArrayList;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import swati4star.createpdf.R;
+import swati4star.createpdf.util.ImageUtils;
 
 public class RearrangeImagesAdapter extends RecyclerView.Adapter<RearrangeImagesAdapter.ViewHolder> {
     private ArrayList<String> mImagesUri;
@@ -54,7 +55,8 @@ public class RearrangeImagesAdapter extends RecyclerView.Adapter<RearrangeImages
         } else {
             holder.buttonDown.setVisibility(View.VISIBLE);
         }
-        Picasso.with(mContext).load(imageFile).into(holder.imageView);
+        double[] size = ImageUtils.getInstance().calculateInSampleSize(mImagesUri.get(position), 780, 1200);
+        Picasso.with(mContext).load(imageFile).resize((int) size[0], (int) size[1]).into(holder.imageView);
         holder.pageNumber.setText(String.valueOf(position + 1));
     }
 
