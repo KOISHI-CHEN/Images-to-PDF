@@ -276,4 +276,5 @@ public class ImageUtils {
         return bitmap.sameAs(whiteBitmap);
     }
 
+
 }
