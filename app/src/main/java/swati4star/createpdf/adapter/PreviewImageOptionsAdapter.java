@@ -1,6 +1,6 @@
 package swati4star.createpdf.adapter;
 
-import android.annotation.SuppressLint;
+import :android.annotation.SuppressLint;
 import android.content.Context;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;

@@ -15,7 +15,6 @@ import java.io.File;
 import java.util.ArrayList;
 
 import swati4star.createpdf.R;
-import swati4star.createpdf.util.ImageUtils;
 
 public class PreviewAdapter extends PagerAdapter {
 
@@ -36,8 +35,8 @@ public class PreviewAdapter extends PagerAdapter {
         final ImageView imageView = layout.findViewById(R.id.image);
         String path = mPreviewItems.get(position);
         File fileLocation = new File(path);
-        double[] size = ImageUtils.getInstance().calculateInSampleSize(path, 780, 1200);
-        Picasso.with(mContext).load(fileLocation).resize((int) size[0], (int) size[1]).into(imageView);
+        Picasso.with(mContext).load(fileLocation).resize(780, 1200)
+                .onlyScaleDown().into(imageView);
         TextView fileName = layout.findViewById(R.id.tvFileName);
         String fileNameString = fileLocation.getName();
         fileName.setText(fileNameString);

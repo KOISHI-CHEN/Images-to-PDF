@@ -280,13 +280,14 @@ public class ImageUtils {
 
     /**
      * try to calculate the correct size
-     * @param path the file path
-     * @param reqWidth max width
+     *
+     * @param path      the file path
+     * @param reqWidth  max width
      * @param reqHeight max height
      * @return the image after scaling down
      */
     public Bitmap decodeSampledBitmapFromFile(String path,
-                                                         int reqWidth, int reqHeight) {
+                                              int reqWidth, int reqHeight) {
 
         // First decode with inJustDecodeBounds=true to check dimensions
         final BitmapFactory.Options options = new BitmapFactory.Options();
@@ -298,14 +299,14 @@ public class ImageUtils {
 
         // Decode bitmap with inSampleSize set
         options.inJustDecodeBounds = false;
-
         return BitmapFactory.decodeFile(path, options);
     }
 
     /**
+     * calculate the multiple of scale down from a BitmapFactory.Options.
      *
-     * @param options an parameter from
-     * @param reqWidth the max width of displaying the image
+     * @param options   an parameter from
+     * @param reqWidth  the max width of displaying the image
      * @param reqHeight the max height of displaying the image
      * @return the rate of scaling down
      */
@@ -327,17 +328,5 @@ public class ImageUtils {
 
         return inSampleSize;
     }
-
-    public double[] calculateInSampleSize(String path, int reqWidth, int reqHeight) {
-        final BitmapFactory.Options options = new BitmapFactory.Options();
-        options.inJustDecodeBounds = true;
-        BitmapFactory.decodeFile(path, options);
-        int multiple = this.calculateInSampleSize(options, reqWidth, reqHeight);
-        double[] size = new double[2];
-        size[0] = options.outWidth * Math.pow(0.5, multiple);
-        size[1] = options.outHeight *  Math.pow(0.5, multiple);
-        return size;
-    }
-
 
 }
