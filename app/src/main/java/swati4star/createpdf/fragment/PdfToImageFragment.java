@@ -117,15 +117,15 @@ public class PdfToImageFragment extends Fragment implements BottomSheetPopulate,
         return rootView;
     }
 
-    @OnClick(R.id.viewImagesInGallery)
-    void onImagesInGalleryClick() {
-        Intent intent = new Intent();
-        intent.setAction(Intent.ACTION_VIEW);
-        Uri imagesUri = Uri.parse("content:///storage/emulated/0/PDFfiles/");
-        intent.setDataAndType(imagesUri, "image/*");
-        intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
-        startActivity(intent);
-    }
+//    @OnClick(R.id.viewImagesInGallery)
+//    void onImagesInGalleryClick() {
+//        Intent intent = new Intent();
+//        intent.setAction(Intent.ACTION_VIEW);
+//        Uri imagesUri = Uri.parse("content:///storage/emulated/0/PDFfiles/");
+//        intent.setDataAndType(imagesUri, "image/*");
+//        intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
+//        startActivity(intent);
+//    }
 
     /**
      * called when user chooses to share generated images
