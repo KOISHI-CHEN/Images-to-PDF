@@ -38,7 +38,6 @@ import swati4star.createpdf.model.BrushItem;
 import swati4star.createpdf.model.FilterItem;
 import swati4star.createpdf.util.BrushUtils;
 import swati4star.createpdf.util.ImageFilterUtils;
-import swati4star.createpdf.util.ImageUtils;
 import swati4star.createpdf.util.StringUtils;
 import swati4star.createpdf.util.ThemeUtils;
 
