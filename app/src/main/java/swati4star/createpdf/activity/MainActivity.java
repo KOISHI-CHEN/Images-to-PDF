@@ -71,6 +71,7 @@ public class MainActivity extends AppCompatActivity
         StringUtils.getInstance().setContext(this);
         StringUtils.getInstance().getStorageLocation();
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_main);
         mNavigationView = findViewById(R.id.nav_view);
 

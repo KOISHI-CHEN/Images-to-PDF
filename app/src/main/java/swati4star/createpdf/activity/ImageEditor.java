@@ -154,7 +154,7 @@ public class ImageEditor extends AppCompatActivity implements OnFilterItemClicke
 
         mCurrentImage = count % mDisplaySize;
         photoEditorView.getSource()
-                .setImageBitmap(ImageUtils.getInstance().decodeSampledBitmapFromFile(mImagePaths.get(mCurrentImage), 780, 1200));
+                .setImageBitmap(BitmapFactory.decodeFile(mImagePaths.get(mCurrentImage)));
         imageCount.setText(String.format(getString(R.string.showing_image), mCurrentImage + 1, mDisplaySize));
     }
 
